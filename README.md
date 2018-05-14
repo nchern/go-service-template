@@ -23,3 +23,8 @@ My opinionated view on how a generic Golang service project(along with its code 
 ├── scripts             # All build/admin related scripts for _this_ project go here.
     └── build.sh
 ```
+
+# Not covered yet
+ - [ ] Dependency management(e.g. glide)
+ - [ ] Coverage tool(go-coverage)
+ - [ ] Codegen examples
