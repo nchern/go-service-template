@@ -8,12 +8,12 @@ OUT=$(NAME)
 
 .PHONY: build
 build:
-	 GOOS=linux go build -o bin/$(OUT) .
+	 @GOOS=linux go build -o bin/$(OUT) .
 
 .PHONY: test
 test:
-	go test ./...
+	@go test ./...
 
 .PHONY: docker-build
 docker-build: build
-	docker build -t $(IMAGE_NAME) --build-arg SERVICE_NAME=$(NAME) .
+	@docker build -t $(IMAGE_NAME) --build-arg SERVICE_NAME=$(NAME) .
