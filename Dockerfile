@@ -6,9 +6,15 @@ COPY bin/my-cool-service /my-cool-service
 
 WORKDIR /
 
+# Main service port
+EXPOSE 80
+
+# (optional) metrics exposing port
+EXPOSE 81
+
 ENTRYPOINT ["./my-cool-service"]
 
-# Maybe better approach: build inside a container
+# Maybe better approach: build inside the container
 
 # FROM golang:1.8 as builder
 # WORKDIR /go/src/<PATH-TO-PROJECT>
