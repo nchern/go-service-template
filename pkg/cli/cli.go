@@ -14,7 +14,7 @@ var (
 )
 
 // Init initialises the root command of the utility
-// defaultAction
+//  - defaultAction will be executed if no sub-command is given
 func Init(appName string, longHelp string, shortHelp string, defaultAction func()) {
 	rootCmd = &cobra.Command{
 		Use:   appName,
@@ -29,6 +29,7 @@ func Init(appName string, longHelp string, shortHelp string, defaultAction func(
 	cliCmd.AddCommand(createCmd)
 }
 
+// Execute is an entry point to CLI
 func Execute() error {
 	return rootCmd.Execute()
 }

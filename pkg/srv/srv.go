@@ -2,10 +2,6 @@ package srv
 
 import "log"
 
-var (
-	name string
-)
-
 // Start runs the api server
 func Start(name string) {
 	log.Printf("Noop %s srv is running", name)

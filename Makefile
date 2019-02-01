@@ -1,4 +1,4 @@
-NAME=my-cool-service
+NAME=go-service-template
 TAG=latest
 IMAGE_NAME=$(NAME):$(TAG)
 OUT=$(NAME)
@@ -8,7 +8,7 @@ OUT=$(NAME)
 
 .PHONY: build
 build:
-	 @GOOS=linux go build -o bin/$(OUT) .
+	 @go build -o bin/$(OUT) .
 
 .PHONY: test
 test:

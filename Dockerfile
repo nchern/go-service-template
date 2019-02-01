@@ -1,8 +1,8 @@
 FROM scratch
 
-# ARG SERVICE_NAME=${SERVICE_NAME:-my-cool-service}
+# ARG SERVICE_NAME=${SERVICE_NAME:go-service-template}
 
-COPY bin/my-cool-service /my-cool-service
+COPY bin/go-service-template /go-service-template
 
 WORKDIR /
 
@@ -12,7 +12,7 @@ EXPOSE 80
 # (optional) metrics exposing port
 EXPOSE 81
 
-ENTRYPOINT ["./my-cool-service"]
+ENTRYPOINT ["./go-service-template"]
 
 # Maybe better approach: build inside the container
 
