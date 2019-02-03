@@ -1,10 +1,17 @@
-FROM scratch
+FROM golang:1.8 as builder
 
-# ARG SERVICE_NAME=${SERVICE_NAME:go-service-template}
+WORKDIR /go/src/github.com/nchern/go-service-template
+COPY . .
 
-COPY bin/go-service-template /go-service-template
+# Build the project inside an intermediate container
+RUN make install-deps build
+
+# Stat
+FROM golang:1.8
 
 WORKDIR /
+
+COPY --from=builder /go/src/github.com/nchern/go-service-template/bin/go-service-template /go-service-template
 
 # Main service port
 EXPOSE 80
@@ -12,16 +19,4 @@ EXPOSE 80
 # (optional) metrics exposing port
 EXPOSE 81
 
-ENTRYPOINT ["./go-service-template"]
-
-# Maybe better approach: build inside the container
-
-# FROM golang:1.8 as builder
-# WORKDIR /go/src/<PATH-TO-PROJECT>
-# RUN curl https://glide.sh/get | sh
-# WORKDIR /go/src/<PATH-TO-PROJECT>
-# RUN make build
-
-# FROM golang:1.8
-# COPY --from=builder /go/src/<PATH-TO-PROJECT>/bin/$SERVICE_NAME .
-# ENTRYPOINT ["./$SERVICE_NAME"]
+ENTRYPOINT /go-service-template
