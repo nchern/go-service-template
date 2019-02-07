@@ -6,8 +6,8 @@ import (
 	"os/signal"
 	"syscall"
 
-	"github.com/nchern/go-service-template/pkg/cli"
-	"github.com/nchern/go-service-template/pkg/srv"
+	"github.com/nchern/go-service-template/go-service-template/pkg/cli"
+	"github.com/nchern/go-service-template/go-service-template/pkg/srv"
 )
 
 const (
