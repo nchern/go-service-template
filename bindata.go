@@ -2,6 +2,7 @@
 // sources:
 // go-service-template/Dockerfile
 // go-service-template/Makefile
+// go-service-template/README.md
 // go-service-template/deploy/README.md
 // go-service-template/docker-compose.yml
 // go-service-template/main.go
@@ -113,6 +114,26 @@ func goServiceTemplateMakefile() (*asset, error) {
 	}
 
 	info := bindataFileInfo{name: "go-service-template/Makefile", size: 496, mode: os.FileMode(420), modTime: time.Unix(1549574591, 0)}
+	a := &asset{bytes: bytes, info: info}
+	return a, nil
+}
+
+var _goServiceTemplateReadmeMd = []byte("\x1f\x8b\x08\x00\x00\x00\x00\x00\x00\xff\x72\x4c\x49\x51\x48\xcc\xc9\x51\xc8\x4b\x4d\x4e\x2d\x2e\x4e\x2c\xaa\x54\x28\x28\xca\xcf\x4a\x4d\x2e\xd1\x2d\x4a\x4d\xcc\x29\x49\x4d\x51\xc8\xcc\x4b\xcb\x57\xc8\x48\x2d\x4a\xe5\x02\x04\x00\x00\xff\xff\x41\x19\xbb\xd9\x2c\x00\x00\x00")
+
+func goServiceTemplateReadmeMdBytes() ([]byte, error) {
+	return bindataRead(
+		_goServiceTemplateReadmeMd,
+		"go-service-template/README.md",
+	)
+}
+
+func goServiceTemplateReadmeMd() (*asset, error) {
+	bytes, err := goServiceTemplateReadmeMdBytes()
+	if err != nil {
+		return nil, err
+	}
+
+	info := bindataFileInfo{name: "go-service-template/README.md", size: 44, mode: os.FileMode(420), modTime: time.Unix(1549821609, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -331,6 +352,7 @@ func AssetNames() []string {
 var _bindata = map[string]func() (*asset, error){
 	"go-service-template/Dockerfile": goServiceTemplateDockerfile,
 	"go-service-template/Makefile": goServiceTemplateMakefile,
+	"go-service-template/README.md": goServiceTemplateReadmeMd,
 	"go-service-template/deploy/README.md": goServiceTemplateDeployReadmeMd,
 	"go-service-template/docker-compose.yml": goServiceTemplateDockerComposeYml,
 	"go-service-template/main.go": goServiceTemplateMainGo,
@@ -384,6 +406,7 @@ var _bintree = &bintree{nil, map[string]*bintree{
 	"go-service-template": &bintree{nil, map[string]*bintree{
 		"Dockerfile": &bintree{goServiceTemplateDockerfile, map[string]*bintree{}},
 		"Makefile": &bintree{goServiceTemplateMakefile, map[string]*bintree{}},
+		"README.md": &bintree{goServiceTemplateReadmeMd, map[string]*bintree{}},
 		"deploy": &bintree{nil, map[string]*bintree{
 			"README.md": &bintree{goServiceTemplateDeployReadmeMd, map[string]*bintree{}},
 		}},
