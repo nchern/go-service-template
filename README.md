@@ -1,6 +1,5 @@
 My opinionated view on how a generic Golang service project(along with its code skeleton) should look like. 
 
-
 # Directory structure explanation
 
 ```bash
@@ -22,6 +21,15 @@ My opinionated view on how a generic Golang service project(along with its code 
 │       └── srv.go
 ├── scripts             # All build/admin related scripts for _this_ project go here.
     └── build.sh
+```
+
+# Generate service skeleton
+```bash
+go get github.com/nchern/go-service-template  # get the utility
+
+cd <somewhere-under-gopath>
+
+go-service-template -create my-cool-service  # will create all the code files under ./my-cool-service
 ```
 
 # Not covered yet
