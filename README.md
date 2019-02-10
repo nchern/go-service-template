@@ -3,7 +3,7 @@ My opinionated view on how a generic Golang service project(along with its code 
 # Directory structure explanation
 
 ```bash
-.
+.                       # root service dir
 ├── Dockerfile
 ├── Makefile
 ├── README.md
@@ -24,12 +24,16 @@ My opinionated view on how a generic Golang service project(along with its code 
 ```
 
 # Generate service skeleton
+
+This repo also contains a compilable code generator that can create the service structure discussed above.
+To do this perform the following steps:
+
 ```bash
-go get github.com/nchern/go-service-template  # get the utility
+go get github.com/nchern/go-service-template/go-svc-generator  # get the utility
 
 cd <somewhere-under-gopath>
 
-go-service-template -create my-cool-service  # will create all the code files under ./my-cool-service
+go-svc-generator -create my-cool-service  # will create all the code files under ./my-cool-service
 ```
 
 # Not covered yet

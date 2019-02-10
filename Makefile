@@ -4,5 +4,5 @@ install-deps:
 
 .PHONY: install
 install:
-	go-bindata go-service-template/...
-	go install .
+	go-bindata -o go-svc-generator/bindata.go ./go-service-template/...
+	cd go-svc-generator && go install .
