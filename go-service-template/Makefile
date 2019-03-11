@@ -17,7 +17,7 @@ lint:
 
 .PHONY: vet
 vet:
-	 @go vet ./...
+	 go vet ./...
 
 .PHONY: build
 build:
