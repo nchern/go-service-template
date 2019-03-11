@@ -26,7 +26,7 @@ func Init(appName string, longHelp string, shortHelp string, defaultAction func(
 	}
 	rootCmd.AddCommand(cliCmd)
 
-	cliCmd.AddCommand(createCmd)
+	// cliCmd.AddCommand(...)
 }
 
 // Execute is an entry point to CLI
