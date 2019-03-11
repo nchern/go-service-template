@@ -83,10 +83,16 @@ func fixDockerfile(serviceName string) error {
 func create(serviceName string) {
 	currentDir := "."
 
-	must(RestoreAssets(currentDir, templateName))
-	defer os.RemoveAll(templateName)
+	restoreDir, notErr := ioutil.TempDir(currentDir, "template-")
+	must(notErr)
 
-	must(os.Rename(templateName, serviceName))
+	defer os.RemoveAll(restoreDir)
+
+	must(RestoreAssets(restoreDir, templateName))
+
+	templateDir := filepath.Join(restoreDir, templateName)
+
+	must(os.Rename(templateDir, serviceName))
 
 	must(cleanImports(serviceName))
 

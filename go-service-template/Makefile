@@ -29,7 +29,7 @@ install: test
 
 .PHONY: test
 test: vet
-	@go test ./...
+	@go test -race ./...
 
 .PHONY: docker-build
 docker-build:
