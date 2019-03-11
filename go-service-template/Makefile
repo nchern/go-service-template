@@ -8,7 +8,16 @@ OUT=$(NAME)
 
 .PHONY: install-deps
 install-deps:
+	# use your chosen dependency management system
 	@go get -d ./...
+
+.PHONY: lint
+lint:
+	 @gometalinter ./...
+
+.PHONY: vet
+vet:
+	 @go vet ./...
 
 .PHONY: build
 build:
@@ -19,7 +28,7 @@ install: test
 	 @go install ./...
 
 .PHONY: test
-test:
+test: vet
 	@go test ./...
 
 .PHONY: docker-build
