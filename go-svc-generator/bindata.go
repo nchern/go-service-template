@@ -93,7 +93,7 @@ func goServiceTemplateDockerfile() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "go-service-template/Dockerfile", size: 405, mode: os.FileMode(420), modTime: time.Unix(1549928643, 0)}
+	info := bindataFileInfo{name: "go-service-template/Dockerfile", size: 405, mode: os.FileMode(420), modTime: time.Unix(1552344077, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -113,7 +113,7 @@ func goServiceTemplateMakefile() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "go-service-template/Makefile", size: 623, mode: os.FileMode(420), modTime: time.Unix(1552289035, 0)}
+	info := bindataFileInfo{name: "go-service-template/Makefile", size: 623, mode: os.FileMode(420), modTime: time.Unix(1552344077, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -133,7 +133,7 @@ func goServiceTemplateReadmeMd() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "go-service-template/README.md", size: 44, mode: os.FileMode(420), modTime: time.Unix(1549928604, 0)}
+	info := bindataFileInfo{name: "go-service-template/README.md", size: 44, mode: os.FileMode(420), modTime: time.Unix(1552344077, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -153,7 +153,7 @@ func goServiceTemplateDeployReadmeMd() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "go-service-template/deploy/README.md", size: 40, mode: os.FileMode(420), modTime: time.Unix(1549928604, 0)}
+	info := bindataFileInfo{name: "go-service-template/deploy/README.md", size: 40, mode: os.FileMode(420), modTime: time.Unix(1552344077, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -173,7 +173,7 @@ func goServiceTemplateDockerComposeYml() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "go-service-template/docker-compose.yml", size: 43, mode: os.FileMode(420), modTime: time.Unix(1549928604, 0)}
+	info := bindataFileInfo{name: "go-service-template/docker-compose.yml", size: 43, mode: os.FileMode(420), modTime: time.Unix(1552344077, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -193,7 +193,7 @@ func goServiceTemplateMainGo() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "go-service-template/main.go", size: 655, mode: os.FileMode(420), modTime: time.Unix(1550186986, 0)}
+	info := bindataFileInfo{name: "go-service-template/main.go", size: 655, mode: os.FileMode(420), modTime: time.Unix(1552344077, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -213,7 +213,7 @@ func goServiceTemplatePkgReadmeMd() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "go-service-template/pkg/README.md", size: 43, mode: os.FileMode(420), modTime: time.Unix(1549928604, 0)}
+	info := bindataFileInfo{name: "go-service-template/pkg/README.md", size: 43, mode: os.FileMode(420), modTime: time.Unix(1552344077, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -233,7 +233,7 @@ func goServiceTemplatePkgCliCliGo() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "go-service-template/pkg/cli/cli.go", size: 683, mode: os.FileMode(420), modTime: time.Unix(1549928604, 0)}
+	info := bindataFileInfo{name: "go-service-template/pkg/cli/cli.go", size: 683, mode: os.FileMode(420), modTime: time.Unix(1552344077, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -253,7 +253,7 @@ func goServiceTemplatePkgCliCreateGo() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "go-service-template/pkg/cli/create.go", size: 319, mode: os.FileMode(420), modTime: time.Unix(1549928604, 0)}
+	info := bindataFileInfo{name: "go-service-template/pkg/cli/create.go", size: 319, mode: os.FileMode(420), modTime: time.Unix(1552344077, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -273,7 +273,7 @@ func goServiceTemplatePkgSrvSrvGo() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "go-service-template/pkg/srv/srv.go", size: 247, mode: os.FileMode(420), modTime: time.Unix(1549928604, 0)}
+	info := bindataFileInfo{name: "go-service-template/pkg/srv/srv.go", size: 247, mode: os.FileMode(420), modTime: time.Unix(1552344077, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -293,7 +293,7 @@ func goServiceTemplateScriptsBuildSh() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "go-service-template/scripts/build.sh", size: 58, mode: os.FileMode(420), modTime: time.Unix(1549928604, 0)}
+	info := bindataFileInfo{name: "go-service-template/scripts/build.sh", size: 58, mode: os.FileMode(420), modTime: time.Unix(1552344077, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
