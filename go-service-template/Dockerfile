@@ -1,4 +1,4 @@
-FROM golang:1.11 as builder
+FROM golang:1.13 as builder
 
 WORKDIR /go/src/github.com/nchern/go-service-template/go-service-template
 COPY . .
@@ -6,7 +6,7 @@ COPY . .
 # Build the project inside an intermediate container
 RUN make install-deps install
 
-FROM golang:1.11
+FROM golang:1.13
 
 WORKDIR /
 
