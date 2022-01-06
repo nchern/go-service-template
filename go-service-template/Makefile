@@ -16,11 +16,11 @@ lint:
 	 @gometalinter ./...
 
 .PHONY: vet
-vet:
+vet: lint
 	 go vet ./...
 
 .PHONY: build
-build:
+build: vet
 	 @go build -o bin/$(OUT) .
 
 .PHONY: install
