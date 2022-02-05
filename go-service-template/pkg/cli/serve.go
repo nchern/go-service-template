@@ -9,6 +9,11 @@ import (
 	"github.com/spf13/cobra"
 )
 
+// This is an example of a cli subcommand: serve runs the server to accept possible requests
+// It also imposes a basic structure on cli commands:
+// - one file per command
+// - add the command to root command in init function in each command file.
+
 var (
 	serveCmd = &cobra.Command{
 		Use:   "serve",
