@@ -13,7 +13,7 @@ install-deps:
 
 .PHONY: lint
 lint:
-	 @gometalinter ./...
+	 @golint ./...
 
 .PHONY: vet
 vet: lint
@@ -31,6 +31,6 @@ install: test
 test: vet
 	@go test -race ./...
 
-.PHONY: docker-build
-docker-build:
+.PHONY: container-image
+container-image:
 	@docker build -t $(IMAGE_NAME) .
