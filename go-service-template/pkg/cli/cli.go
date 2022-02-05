@@ -4,19 +4,25 @@ import (
 	"github.com/spf13/cobra"
 )
 
+const (
+	appName = "go-service-template"
+
+	shortHelp = "go-service-template is a ..."
+
+	longHelp = "Long help"
+)
+
 var (
 	rootCmd *cobra.Command
 )
 
-// Init initialises the root command of the utility
-//  - defaultAction will be executed if no sub-command is given
-func Init(appName string, longHelp string, shortHelp string, defaultAction func()) {
+func init() {
 	rootCmd = &cobra.Command{
 		Use:   appName,
 		Long:  longHelp,
 		Short: shortHelp,
-		Run: func(cmd *cobra.Command, args []string) {
-			defaultAction()
+		RunE: func(cmd *cobra.Command, args []string) error {
+			return cmd.Help()
 		},
 	}
 }
