@@ -17,10 +17,6 @@ const (
 
 type sources string
 
-func (src sources) mainGo() string {
-	return filepath.Join(string(src), "main.go")
-}
-
 func (src sources) dockerfile() string {
 	return filepath.Join(string(src), "Dockerfile")
 }
@@ -41,15 +37,14 @@ func substituteTemplateName(serviceName string) error {
 	})
 }
 
-func cleanImports(dir string) error {
-	lines := []string{}
-	src := sources(dir)
-	srcFile, err := os.Open(src.mainGo())
+func cleanImporsFromFile(path string) error {
+	srcFile, err := os.Open(path)
 	if err != nil {
 		return err
 	}
 	defer srcFile.Close()
 
+	lines := []string{}
 	scanner := bufio.NewScanner(srcFile)
 	for scanner.Scan() {
 		line := scanner.Text()
@@ -63,7 +58,30 @@ func cleanImports(dir string) error {
 		return err
 	}
 
-	return writeFile(src.mainGo(), strings.Join(lines, "\n"))
+	return writeFile(path, strings.Join(lines, "\n"))
+}
+
+func fixImports(dir string) error {
+	return filepath.Walk(dir, func(path string, info os.FileInfo, err error) error {
+		if err != nil {
+			return err
+		}
+
+		isGoSourceFile := strings.HasSuffix(path, ".go") && !info.IsDir()
+		if !isGoSourceFile {
+			return nil
+		}
+
+		if err := cleanImporsFromFile(path); err != nil {
+			return fmt.Errorf("cleanImporsFromFile: %w", err)
+		}
+
+		err = exec.Command("goimports", "-w", path).Run()
+		if err != nil {
+			return fmt.Errorf("goimports: %w", err)
+		}
+		return nil
+	})
 }
 
 func fixDockerfile(serviceName string) error {
@@ -94,11 +112,9 @@ func create(serviceName string) {
 
 	must(os.Rename(templateDir, serviceName))
 
-	must(cleanImports(serviceName))
-
 	must(fixDockerfile(serviceName))
 
-	must(substituteTemplateName(serviceName))
+	must(fixImports(serviceName))
 
-	must(exec.Command("goimports", "-w", sources(serviceName).mainGo()).Run())
+	must(substituteTemplateName(serviceName))
 }
