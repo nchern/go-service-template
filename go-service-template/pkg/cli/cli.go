@@ -5,11 +5,6 @@ import (
 )
 
 var (
-	cliCmd = &cobra.Command{
-		Use:   "cli",
-		Short: "Exposes command line interface",
-	}
-
 	rootCmd *cobra.Command
 )
 
@@ -24,9 +19,6 @@ func Init(appName string, longHelp string, shortHelp string, defaultAction func(
 			defaultAction()
 		},
 	}
-	rootCmd.AddCommand(cliCmd)
-
-	// cliCmd.AddCommand(...)
 }
 
 // Execute is an entry point to CLI

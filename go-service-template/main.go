@@ -1,7 +1,7 @@
 package main
 
 import (
-	"fmt"
+	"log"
 	"os"
 	"os/signal"
 	"syscall"
@@ -13,7 +13,9 @@ import (
 const (
 	svcName = "go-service-template"
 
-	shortHelp = "%s is a ..."
+	shortHelp = "go-service-template is a ..."
+
+	longHelp = "Long help"
 )
 
 var ()
@@ -21,13 +23,13 @@ var ()
 func init() {
 	cli.Init(
 		svcName,
-		"Long help",
-		fmt.Sprintf(shortHelp, svcName),
-		runAndWait,
+		longHelp,
+		shortHelp,
+		serveForever,
 	)
 }
 
-func runAndWait() {
+func serveForever() {
 	go srv.Start(svcName)
 
 	c := make(chan os.Signal, 1)
@@ -40,7 +42,6 @@ func runAndWait() {
 
 func main() {
 	if err := cli.Execute(); err != nil {
-		fmt.Fprintln(os.Stderr, err)
-		os.Exit(1)
+		log.Fatalf("fatal: %s", err)
 	}
 }
