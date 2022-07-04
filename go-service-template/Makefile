@@ -3,8 +3,8 @@ TAG=latest
 IMAGE_NAME=$(NAME):$(TAG)
 OUT=$(NAME)
 
-# Enrich the commands below with appropriate logic if necessary
-# Introducing a shell script(e.g.into ./scripts/ folder) could be concidered as a good practice
+# TODO: Enrich the commands below with appropriate logic if necessary
+# TODO: Introducing a shell script(e.g.into ./scripts/ folder) could be concidered as a good practice
 
 .PHONY: install-deps
 install-deps:
